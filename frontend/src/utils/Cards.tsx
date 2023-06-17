@@ -3,13 +3,13 @@ import { Card, Button } from "antd";
 import QuantityBtn from "./QuantityBtn";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../redux/CartSlice";
+import { fetchCartData } from "../Redux/CartSlice";
 import { HeartOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
 const { Meta } = Card;
 
-const Cards = ({ item }) => {
+const Cards = ({ item }: any) => {
   const [count, setCount] = useState(0);
   const [rowId, setRowId] = useState(0);
   const price = item.Price * count;
@@ -20,19 +20,19 @@ const Cards = ({ item }) => {
     PaymentStatus: false,
   };
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.CartSlice.cartData);
-  const url = useSelector((state) => state.CartSlice.Url);
+  const cart = useSelector((state: any) => state.CartSlice.cartData);
+  const url = useSelector((state: any) => state.CartSlice.Url);
   useEffect(() => {
-    dispatch(fetchCartData());
+    dispatch<any>(fetchCartData());
   }, []);
 
   const handlePost = () => {
-    if (cart.some((cartItem) => cartItem.Product.id === item.id)) {
+    if (cart.some((cartItem: any) => cartItem.Product.id === item.id)) {
       window.alert("Item already in Cart");
     } else {
-      axios.post(`${url}/cart/`, cartItems).then((res) => {
+      axios.post(`${url}/cart/`, cartItems).then((res: any) => {
         console.log(res.data);
-        dispatch(fetchCartData());
+        dispatch<any>(fetchCartData());
       });
     }
   };

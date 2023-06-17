@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../redux/CartSlice";
+import { fetchCartData } from "../Redux/CartSlice";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -11,11 +11,11 @@ const Cart = () => {
     navigate("/checkout");
   };
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.CartSlice.cartData);
+  const cart = useSelector((state: any) => state.CartSlice.cartData);
   // console.log("cart", cart);
 
   useEffect(() => {
-    dispatch(fetchCartData());
+    dispatch<any>(fetchCartData());
   }, []);
 
   return (

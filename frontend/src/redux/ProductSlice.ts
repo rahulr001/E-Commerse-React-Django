@@ -4,7 +4,7 @@ export const fetchProductData = createAsyncThunk(
   "fetchProductData",
   async () => {
     const response = await fetch(
-      "http://127.0.0.1:8000/product_and_category/product/"
+      "https://3.226.14.5:3000/product_and_category/product/"
     );
     return response.json();
   }

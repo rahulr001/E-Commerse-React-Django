@@ -1,29 +1,26 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import QuantityBtn from "../utils/QuantityBtn";
-import { DeleteOutlined } from "@ant-design/icons";
-import { IconButton } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../redux/CartSlice";
+import { fetchCartData } from "../Redux/CartSlice";
 import axios from "axios";
 
-export default function YourOrdersTable({ cart }) {
+export default function YourOrdersTable({ cart }: any) {
   const dispatch = useDispatch();
-  const url = useSelector((state) => state.CartSlice.Url);
+  const url = useSelector((state: any) => state.CartSlice.Url);
   const counterValue = useSelector(
-    (state) => state.CartSlice.countValue.countValue
+    (state: any) => state.CartSlice.countValue.countValue
   );
   const [rowId, setRowId] = React.useState(0);
-  const handleDelete = async (params) => {
+  const handleDelete = async (params: any) => {
     if (window.confirm("Are you sure you want to delete the item")) {
       await axios
         .delete(`${url}/cart/${params.id}/delete`)
-        .then(() => dispatch(fetchCartData()));
+        .then(() => dispatch<any>(fetchCartData()));
     }
   };
 
-  const cartItems = cart.filter((items) => items.PaymentStatus === false);
+  const cartItems = cart.filter((items: any) => items.PaymentStatus === false);
   const columns: GridColDef[] = [
     {
       field: "ImageURL",

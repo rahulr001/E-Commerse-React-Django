@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import CheckOutDialog from "./CheckOutDialog";
 
-const OrderSummary = ({ cart }) => {
+const OrderSummary = ({ cart }: any) => {
   const [open, setOpen] = useState(false);
   const [promo, setPromo] = useState("");
   const subTotal = cart.reduce(
-    (accumulator, currentItem) => accumulator + currentItem.CartPrice,
+    (accumulator: any, currentItem: any) => accumulator + currentItem.CartPrice,
     0
   );
   const [shippingFee, setShippingFee] = useState(subTotal === 0 ? 0 : 50);
@@ -23,7 +23,7 @@ const OrderSummary = ({ cart }) => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setPromo(e.target.value);
     // if (promo) {
     //   total -= 20;
@@ -70,7 +70,7 @@ const OrderSummary = ({ cart }) => {
           >
             <h4 style={{ margin: 0 }}>Subtotal: </h4>
             <h4 style={{ margin: 0, display: "flex", alignItems: "center" }}>
-              <CurrencyRupeeIcon fontSize="10px" />
+              <CurrencyRupeeIcon style={{ fontSize: "10px" }} />
               {subTotal}
             </h4>
           </div>
@@ -85,7 +85,7 @@ const OrderSummary = ({ cart }) => {
             <h4>Shipping:</h4>
 
             <h4 style={{ margin: 0, display: "flex", alignItems: "center" }}>
-              <CurrencyRupeeIcon fontSize="10px" />
+              <CurrencyRupeeIcon style={{ fontSize: "10px" }} />
               {shippingFee}
             </h4>
           </div>
@@ -104,7 +104,7 @@ const OrderSummary = ({ cart }) => {
         <h2>Total</h2>
 
         <h2 style={{ margin: 0, display: "flex", alignItems: "center" }}>
-          <CurrencyRupeeIcon fontSize="10px" />
+          <CurrencyRupeeIcon style={{ fontSize: "10px" }} />
           {total}
         </h2>
       </div>

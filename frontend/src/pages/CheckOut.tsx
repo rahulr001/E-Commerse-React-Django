@@ -4,16 +4,16 @@ import { Grid } from "@mui/material";
 import CartTable from "../components/CartTable";
 import OrderSummary from "../components/OrderSummary";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../redux/CartSlice";
+import { fetchCartData } from "../Redux/CartSlice";
 
 const CheckOut = () => {
   const dispatch = useDispatch();
 
-  const cart = useSelector((state) => state.CartSlice.cartData);
+  const cart = useSelector((state: any) => state.CartSlice.cartData);
   // console.log("qqqq", cart);
 
   React.useEffect(() => {
-    dispatch(fetchCartData());
+    dispatch<any>(fetchCartData());
   }, [dispatch]);
 
   return (

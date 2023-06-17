@@ -10,20 +10,21 @@ import { fetchProductData } from "../Redux/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Products() {
-    
   const dispatch = useDispatch();
-  const tabitems = useSelector((state) => state.ProductSlice.productData);
+  const tabitems = useSelector((state: any) => state.ProductSlice.productData);
   // console.log("qqqq", tabitems);
 
   React.useEffect(() => {
-    dispatch(fetchProductData());
+    dispatch<any>(fetchProductData());
   }, []);
   const [value, setValue] = React.useState("Vegetables");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-  const CardItems = tabitems.filter((item) => value === item.Category.Category);
+  const CardItems = tabitems.filter(
+    (item: any) => value === item.Category.Category
+  );
   return (
     <Box sx={{ padding: "2rem", typography: "body1" }}>
       <TabContext value={value}>

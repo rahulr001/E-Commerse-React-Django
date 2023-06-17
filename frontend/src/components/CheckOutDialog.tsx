@@ -18,13 +18,12 @@ const Transition = React.forwardRef(function Transition(
   },
   ref: React.Ref<unknown>
 ) {
-  return <Slide direction="top" ref={ref} {...props} />;
+  return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function CheckOutDialog({ open, setOpen, total }) {
+export default function CheckOutDialog({ open, setOpen, total }: any) {
   const [payment, setPayment] = React.useState(" ");
   const navigate = useNavigate();
-
 
   const handleClose = () => {
     if (window.confirm("Do you want to cancel this payment ?")) {
@@ -83,7 +82,7 @@ export default function CheckOutDialog({ open, setOpen, total }) {
               <h2>Total</h2>
 
               <h2 style={{ margin: 0, display: "flex", alignItems: "center" }}>
-                <CurrencyRupeeIcon fontSize="10px" />
+                <CurrencyRupeeIcon style={{ fontSize: "10px" }} />
                 {total}
               </h2>
             </div>
@@ -119,11 +118,8 @@ export default function CheckOutDialog({ open, setOpen, total }) {
           >
             Cancel
           </Button>
-          {payment === 2 ? (
-            <Payment
-              total={total}
-              handleConfirm={handleConfirm}
-            />
+          {payment === "2" ? (
+            <Payment total={total} handleConfirm={handleConfirm} />
           ) : (
             <Button
               style={{

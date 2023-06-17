@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../redux/CartSlice";
+import { fetchCartData } from "../Redux/CartSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,11 +15,11 @@ const FloatingCartBtn = (props: Props) => {
   };
 
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.CartSlice.cartData);
+  const cart = useSelector((state: any) => state.CartSlice.cartData);
   // console.log("cart", cart);
 
   useEffect(() => {
-    dispatch(fetchCartData());
+    dispatch<any>(fetchCartData());
   }, []);
 
   return (

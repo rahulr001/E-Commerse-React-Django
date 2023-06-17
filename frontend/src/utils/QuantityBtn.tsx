@@ -4,10 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { increaseCounter, fetchCartData } from "../Redux/CartSlice";
 import axios from "axios";
 
-const QuantityBtn = ({ count, setCount, counts, id, setRowId, params }) => {
+const QuantityBtn = ({
+  count,
+  setCount,
+
+  id,
+  setRowId,
+  params,
+}: any) => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.CartSlice.countValue.countValue);
-  const url = useSelector((state) => state.CartSlice.Url);
+  const counter = useSelector(
+    (state: any) => state.CartSlice.countValue.countValue
+  );
+  const url = useSelector((state: any) => state.CartSlice.Url);
   const updateData = () => {
     if (params) {
       return {
@@ -19,9 +28,11 @@ const QuantityBtn = ({ count, setCount, counts, id, setRowId, params }) => {
     }
   };
   const updateCart = () => {
-    axios.put(`${url}/cart/${params.id}/update`, updateData()).then((res) => {
-      dispatch(fetchCartData());
-    });
+    axios
+      .put(`${url}/cart/${params.id}/update`, updateData())
+      .then((res: any) => {
+        dispatch<any>(fetchCartData());
+      });
   };
   const handleIncrement = () => {
     setCount(count + 1);

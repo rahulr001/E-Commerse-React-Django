@@ -1,6 +1,6 @@
 import Cards from "../utils/Cards";
 
-const TabContent = ({ items }) => {
+const TabContent = ({ items }: any) => {
   // console.log("items", items);
   return (
     <div
@@ -13,7 +13,7 @@ const TabContent = ({ items }) => {
         gap: "2rem",
       }}
     >
-      {items.map((Item) => (
+      {items.map((Item: any) => (
         <Cards item={Item} />
       ))}
     </div>

@@ -9,14 +9,14 @@ type Props = {};
 
 const Shop = (props: Props) => {
   const dispatch = useDispatch();
-  const tabitems = useSelector((state) => state.ProductSlice.productData);
+  const tabitems = useSelector((state: any) => state.ProductSlice.productData);
   useEffect(() => {
-    dispatch(fetchProductData());
+    dispatch<any>(fetchProductData());
   }, []);
 
   const [filter, setFilter] = useState("");
   const searchItem = useMemo(() => {
-    return tabitems.filter((item) => {
+    return tabitems.filter((item: any) => {
       return item.ProductName.toLowerCase().includes(filter.toLowerCase());
     });
   }, [tabitems, filter]);
@@ -74,7 +74,7 @@ const Shop = (props: Props) => {
           gap: "2rem",
         }}
       >
-        {searchItem.map((item) => (
+        {searchItem.map((item: any) => (
           <Cards item={item} />
         ))}
       </Box>
