@@ -6,7 +6,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import { tabItems } from "../constants";
 import Tabs from "@mui/material/Tabs";
 import TabContent from "./TabContent";
-import { fetchProductData } from "../Redux/ProductSlice";
+import { fetchProductData } from "../redux/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Products() {

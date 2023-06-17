@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 import axios from "axios";
 
 export default function YourOrdersTable({ cart }: any) {

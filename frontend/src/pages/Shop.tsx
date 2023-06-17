@@ -1,6 +1,6 @@
 import { Grid, Box } from "@mui/material";
 import Cards from "../utils/Cards";
-import { fetchProductData } from "../Redux/ProductSlice";
+import { fetchProductData } from "../redux/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import { Input } from "antd";

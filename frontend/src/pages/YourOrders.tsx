@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 import YourOrdersTable from "../components/YourOrdersTable";
 type Props = {};
 

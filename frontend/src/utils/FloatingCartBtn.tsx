@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

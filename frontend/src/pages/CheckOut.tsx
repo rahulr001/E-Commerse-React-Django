@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import CartTable from "../components/CartTable";
 import OrderSummary from "../components/OrderSummary";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 
 const CheckOut = () => {
   const dispatch = useDispatch();

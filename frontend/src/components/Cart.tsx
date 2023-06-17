@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 
 const Cart = () => {
   const navigate = useNavigate();

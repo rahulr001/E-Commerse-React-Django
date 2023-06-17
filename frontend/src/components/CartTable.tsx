@@ -5,7 +5,7 @@ import QuantityBtn from "../utils/QuantityBtn";
 import { DeleteOutlined } from "@ant-design/icons";
 import { IconButton } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 import axios from "axios";
 
 export default function CartTable({ cart }: any) {

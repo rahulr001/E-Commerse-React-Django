@@ -3,7 +3,7 @@ import { Card, Button } from "antd";
 import QuantityBtn from "./QuantityBtn";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCartData } from "../Redux/CartSlice";
+import { fetchCartData } from "../redux/CartSlice";
 import { HeartOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 
