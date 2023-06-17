@@ -12,7 +12,6 @@ const Cart = () => {
   };
   const dispatch = useDispatch();
   const cart = useSelector((state: any) => state.CartSlice.cartData);
-  // console.log("cart", cart);
 
   useEffect(() => {
     dispatch<any>(fetchCartData());
